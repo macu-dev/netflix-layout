@@ -4,7 +4,6 @@
 }
 
 @mixin bg($color, $img-url, $size, $position ){
-
   background: {
     image: $img-url;
     size:$size;
@@ -13,4 +12,12 @@
     color:$color;
   }
 
+}
+
+@mixin font($font-fam, $size){
+  font: {
+    family: $font-fam;
+    size:$size;
+
+  }
 }

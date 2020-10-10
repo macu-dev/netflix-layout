@@ -13,8 +13,37 @@ html, body {
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(5, auto);
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(20, auto);
+  grid-template-areas: "navigation header header header header header header" "navigation header header header header header header" "navigation header header header header header header" "navigation header header header header header header" "navigation myList myList myList myList myList myList" "navigation myList myList myList myList myList myList" "navigation myList myList myList myList myList myList" "navigation popular popular popular popular popular popular" "navigation popular popular popular popular popular popular" "navigation popular popular popular popular popular popular" "navigation news    news    news    news    news    news" "navigation news    news    news    news    news    news" "navigation news    news    news    news    news    news" "navigation trending  trending  trending    trending    trending    trending" "navigation trending  trending  trending    trending    trending    trending" "navigation trending  trending  trending    trending    trending    trending" "navigation footer footer  footer  footer    footer    footer" "navigation footer footer  footer  footer    footer    footer" "navigation footer footer  footer  footer    footer    footer" "navigation footer footer  footer  footer    footer    footer";
+}
+.container header {
+  grid-column: header/header;
+  grid-row: header/header;
+}
+.container .navigation-netflix {
+  grid-column: navigation/navigation;
+  grid-row: navigation/navigation;
+}
+.container .my-list-netflix {
+  grid-column: myList/myList;
+  grid-row: myList/myList;
+}
+.container .popular-netflix {
+  grid-column: popular/popular;
+  grid-row: popular/popular;
+}
+.container .news-netflix {
+  grid-column: news/news;
+  grid-row: news/news;
+}
+.container .trending-netflix {
+  grid-column: trending/trending;
+  grid-row: trending/trending;
+}
+.container footer {
+  grid-column: footer/footer;
+  grid-row: footer/footer;
 }
 
 /*# sourceMappingURL=main.css.map */

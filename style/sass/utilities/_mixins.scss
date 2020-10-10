@@ -1,0 +1,4 @@
+@mixin grid-row-column($column-row){
+  grid-column:$column-row/$column-row;
+  grid-row:$column-row/$column-row;
+}

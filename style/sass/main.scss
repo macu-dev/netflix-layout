@@ -1,5 +1,8 @@
-@import 'utilities/variables';
+@import 'utilities/variable';
+@import 'base/typo';
 @import 'utilities/mixins';
+@import 'base/reset';
 @import 'layout/grid';
 @import 'layout/header';
+@import 'layout/navigation';
 

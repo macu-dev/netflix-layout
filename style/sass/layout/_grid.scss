@@ -1,3 +1,57 @@
 .container{
+  width:$size-100;
+  height:$size-100;
   display:grid;
+  grid-template-columns: 60px repeat(6,1fr);
+  grid-template-rows: repeat(20,auto);
+  grid-template-areas:"navigation header header header header header header"
+                      "navigation header header header header header header"
+                      "navigation header header header header header header"
+                      "navigation header header header header header header"
+                      "navigation myList myList myList myList myList myList" 
+                      "navigation myList myList myList myList myList myList"
+                      "navigation myList myList myList myList myList myList"                                            
+                      "navigation popular popular popular popular popular popular" 
+                      "navigation popular popular popular popular popular popular" 
+                      "navigation popular popular popular popular popular popular" 
+                      "navigation news    news    news    news    news    news"
+                      "navigation news    news    news    news    news    news"
+                      "navigation news    news    news    news    news    news"
+                      "navigation trending  trending  trending    trending    trending    trending" 
+                      "navigation trending  trending  trending    trending    trending    trending" 
+                      "navigation trending  trending  trending    trending    trending    trending" 
+                      "navigation footer footer  footer  footer    footer    footer" 
+                      "navigation footer footer  footer  footer    footer    footer" 
+                      "navigation footer footer  footer  footer    footer    footer" 
+                      "navigation footer footer  footer  footer    footer    footer" ;
+
+  header{
+    @include grid-row-column(header);
+  }
+
+  .navigation-netflix{
+    @include grid-row-column(navigation);
+  }
+
+ .my-list-netflix{
+    @include grid-row-column(myList);
+  }
+
+ .popular-netflix{
+    @include grid-row-column(popular);
+  }
+
+ .news-netflix{
+    @include grid-row-column(news);
+  } 
+
+  .trending-netflix{
+    @include grid-row-column(trending);
+  }
+
+  footer{
+    @include grid-row-column(footer);
+  }
+
 }
+

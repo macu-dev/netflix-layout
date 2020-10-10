@@ -2,3 +2,15 @@
   grid-column:$column-row/$column-row;
   grid-row:$column-row/$column-row;
 }
+
+@mixin bg($color, $img-url, $size, $position ){
+
+  background: {
+    image: $img-url;
+    size:$size;
+    position:$position;
+    repeat: no-repeat;
+    color:$color;
+  }
+
+}

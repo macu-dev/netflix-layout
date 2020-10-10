@@ -47,12 +47,13 @@ html, body {
 }
 
 .container header {
-  background: url("/img/stranger-things.jpg");
-  background-color: #01050e;
-  min-height: 50vh;
-  background-repeat: no-repeat;
+  background-image: url("/img/stranger-things.jpg");
   background-size: 70%;
   background-position: right;
+  background-repeat: no-repeat;
+  background-color: #01050e;
+  min-height: 50vh;
+  color: white;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,10 +1,7 @@
 .container{
   header{
-    background:url("/img/stranger-things.jpg");
-    background-color:$color-bg-img;
+    @include bg($color-bg-img, url("/img/stranger-things.jpg"), 70%, right);
     min-height: 50vh;
-    background-repeat: no-repeat;
-    background-size: 70%;
-    background-position: right;
+    color: white;
   }
 }

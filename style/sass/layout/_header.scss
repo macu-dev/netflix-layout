@@ -15,21 +15,24 @@
   padding:0 2rem;
 
   .title-netflix{
-    font-family: $font;
-    font-size: 1.34rem;
-    margin-bottom: 3px;
+    @include font($font, 1.34rem);
+    margin-bottom: 10px;
 
     span{
-      font-family: $font-original;
+      @include font($font-original, 1
+      .34rem);
+      margin-left: 3px;
       text-transform: uppercase;
-      font-size: 1.34rem;
     }
   }
 
   .title-serie{
-    font-family: $font-serie;
-    font-size: 2.5rem;
+    @include font($font-serie, 3.56rem);
     text-transform: uppercase;
     transform:scale(1,1.5);
   }
+}
+
+.box-info-serie{
+ padding: 0 2rem;
 }

@@ -4,19 +4,18 @@
     min-height: 50vh;
     display: flex;
     flex-wrap: wrap;
-    color: white;
+    color: $color-white;
+    align-content: center;
   }
 }
 
 .box-text{
   width: $size-100;
-  height: 80px;
-  align-self: center;
   padding:0 2rem;
 
   .title-netflix{
     @include font($font, 1.34rem);
-    margin-bottom: 10px;
+    margin-bottom: 0;
 
     span{
       @include font($font-original, 1
@@ -29,10 +28,57 @@
   .title-serie{
     @include font($font-serie, 3.56rem);
     text-transform: uppercase;
-    transform:scale(1,1.5);
+    transform:scale(1,1.15);
   }
 }
 
 .box-info-serie{
  padding: 0 2rem;
+}
+
+.box-clasification-serie{
+  .match{
+    text-transform: capitalize;
+    color:rgb(9, 160, 9);
+    letter-spacing: 1px;
+    font-size: 1.15rem;
+  }
+
+  .year{
+    margin-left: $margin;
+    font-size: 1.15rem;
+  }
+
+  .clasification{
+    background-color: rgb(31, 30, 30);
+    padding: 4px;
+    color:grey;
+    font-weight: bolder;
+    text-transform: uppercase;
+    margin-left: $margin;
+  
+  }
+
+  .seasons{
+   @include settings-clasification(capitalize);
+  }
+
+  .hd{
+    @include settings-clasification(uppercase);
+    color: $color-grey;
+    border: 1px solid  $color-grey;
+    padding: 3px;
+    border-radius: 4px;
+  }
+
+}
+
+.box-info-serie{
+
+  .overview-serie{
+    margin-top: $margin;
+    color: $color-grey;
+    font-size: 1.3rem;
+    width: $size-50;
+  }
 }

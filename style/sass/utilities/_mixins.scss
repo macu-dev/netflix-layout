@@ -21,3 +21,8 @@
 
   }
 }
+
+@mixin settings-clasification($text-style){
+  text-transform: $text-style;
+  margin-left:10px;
+}

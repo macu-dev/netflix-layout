@@ -1,0 +1,30 @@
+.gallery-my-list{
+  display:grid;
+  width: calc( 100% / 7 * 10 );
+  height: inherit;
+  grid-template-columns: repeat(10,2fr);
+  gap: 5px;
+  grid-template-rows: repeat(1, 1fr);
+}
+
+.gallery-item{
+  width: 100%;
+  height: $size-100;
+
+  img{
+    width: $size-100;
+    height: inherit;
+    object-fit: contain;
+  }
+}
+
+
+
+
+.gallery {
+  width: 100%;
+  overflow: hidden;
+  overflow-x: scroll;
+  height: inherit;
+
+}

@@ -2,7 +2,7 @@
   width:$size-100;
   height:$size-100;
   display:grid;
-  grid-template-columns: 60px repeat(6,1fr);
+  grid-template-columns: $sidebar-width repeat(6,1fr);
   grid-template-rows: repeat(20,auto);
   grid-template-areas:"navigation header header header header header header"
                       "navigation header header header header header header"

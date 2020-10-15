@@ -1,8 +1,10 @@
 .navigation-netflix{
   background-color: $color-nav-netflix;
+  width: $sidebar-width;
   display: flex;
   flex-direction: column;
-  height: $size-100;
+  height: 100vh;
+  position: fixed;
   justify-content: space-evenly;
   .navigation-items{
     width: $size-100;

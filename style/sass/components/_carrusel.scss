@@ -1,40 +1,56 @@
 .gallery-my-list{
-  display:grid;
-  width: calc( 100% / 7 * 10 );
-  height: 200px;
-  grid-template-columns: repeat(10,1fr);
-  gap: 0.8rem;
-  grid-template-rows: repeat(1, 1fr);
-}
-
-.gallery-item{
-  width: 100%;
-  height: $size-100;
-
-  img{
-    width: 345px;
-    height: $size-100;
-    object-fit: cover;
+  @include grid (repeat(10,1fr), repeat(1, 1fr) ){
+    width: calc( 100% / 7 * 10 );
+    height: 240px;
+    gap: 0.8rem;
+    transition: all .5s ease-in;
   }
 }
 
-.gallery {
-  width: 100%;
-  overflow: hidden;
-  overflow-x: hidden;
-  height: inherit;
-  position: relative;
+.arrow-gallery.arrow-right{
+  right: 0;
+  margin-top: -220px;
+}
 
+.gallery-item{
+  width: $size-100;
+  height: $size-100;
+
+  img{
+    margin-top: 20px;
+    width: 345px;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  &:hover{
+    cursor: pointer;
+  }
+
+}
+
+.hover{
+  @include zoom (scale(1.2), all .15s ease-out );
+}
+
+.gallery {
+ @include carrousel;
 }
 
 .arrow-gallery{
   position: absolute;
   width: 50px;
   background-color: rgba($color: #000000, $alpha: .6);
-  height: 100%;
+  height: 200px;
+  z-index: 100;
+  margin-top: 20px;
   line-height: 175px !important;
   text-align: center;
+  transition: .2s ease all;
   color: white;
-  
 
+  &:hover{
+    cursor: pointer;
+  }
+  
 }

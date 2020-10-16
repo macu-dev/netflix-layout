@@ -27,3 +27,25 @@
   margin-left:10px;
 }
 
+
+@mixin carrousel{
+  width: $size-100;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  height: inherit;
+  position: relative;
+}
+
+@mixin grid($column, $row){
+  display: grid;
+  grid-template-columns:$column;
+  grid-template-rows:$row;
+  @content;
+}
+
+
+@mixin zoom ($scale,$transition) {
+  transform: $scale;
+  transform-origin: center;
+  transition: $transition;
+}

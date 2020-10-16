@@ -2,5 +2,10 @@
   width: $size-100;
   height: auto;
   color:$color-white;
-  margin-bottom: 2rem;
+  margin-top: 2.5rem;
+
+  .title-section{
+    @include font ($font-monstserrat, 1.8rem);
+    font-weight: bolder;
+  }
 }

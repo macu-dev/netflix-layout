@@ -1,7 +1,7 @@
 .container{
   header{
     @include bg($color-bg-img, url("/img/stranger-things.jpg"), 70%, right);
-    min-height: 50vh;
+    height: 60vh;
     display: flex;
     flex-wrap: wrap;
     color: $color-white;
@@ -14,19 +14,19 @@
   padding:0 2rem;
 
   .title-netflix{
-    @include font($font, 1.34rem);
+    @include font($font, 1.4rem);
     margin-bottom: 0;
 
     span{
       @include font($font-original, 1
-      .34rem);
+      .4rem);
       margin-left: 3px;
       text-transform: uppercase;
     }
   }
 
   .title-serie{
-    @include font($font-serie, 3.56rem);
+    @include font($font-serie, 4rem);
     text-transform: uppercase;
     transform:scale(1,1.15);
   }
@@ -78,7 +78,8 @@
   .overview-serie{
     margin-top: $margin;
     color: $color-grey;
-    font-size: 1.3rem;
+    @include font($font-monstserrat, 1.3rem);
+    line-height: 26px;
     width: $size-50;
   }
 }

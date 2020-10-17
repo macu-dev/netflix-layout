@@ -1,7 +1,7 @@
 .container{
   header{
     @include bg($color-bg-img, url("/img/stranger-things.jpg"), 70%, right);
-    height: 60vh;
+    height: 70vh;
     display: flex;
     flex-wrap: wrap;
     color: $color-white;

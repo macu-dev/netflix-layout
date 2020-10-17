@@ -14,12 +14,21 @@
 
 }
 
-@mixin font($font-fam, $size){
-  font: {
-    family: $font-fam;
-    size:$size;
+@mixin font($font-fam, $size, $color){
 
+  @if($size == ''){
+    font: {
+      family: $font-fam;
+      size:initial;
+    }
+  }@else{
+    font: {
+      family: $font-fam;
+      size:$size;
+    }
   }
+  
+  color:$color;
 }
 
 @mixin settings-clasification($text-style){
@@ -48,4 +57,17 @@
   transform: $scale;
   transform-origin: center;
   transition: $transition;
+}
+
+@mixin configLink{
+  text-decoration: none;
+  @content;
+}
+
+@mixin btn ($bg-color, $border, $border-radius, $padding) {
+  background-color: $bg-color;
+  border: $border;
+  border-radius: $border-radius;
+  padding: $padding;
+  cursor: pointer;
 }

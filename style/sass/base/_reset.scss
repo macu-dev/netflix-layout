@@ -4,7 +4,10 @@
   box-sizing:border-box;
 }
 
-html,body{
+html{
   width: $size-100;
   height:$size-100;
+}
+body{
+  min-width: 100%;
 }

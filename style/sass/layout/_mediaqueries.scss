@@ -1,0 +1,59 @@
+@include mq ($extra-large){
+  .container header{
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+  }
+
+  .box-info-serie .overview-serie ,.box-clasification-serie .clasification, .box-clasification-serie .hd {
+    color:$color-icon;
+  }
+
+  .column-footer1 a, .column-footer2 a, .column-footer3 a, .column-footer4 a, .btn-box button, .btn-box + p {
+    font-size: 0.79rem;
+  }
+
+}
+
+@include mq ($large){
+  footer .column-footer1, footer .column-footer2, footer .column-footer3, footer .column-footer4{
+    width: 50%;
+    height: auto;
+  }
+
+  .box-text .title-netflix, .box-text .title-netflix span {
+    font-size: 1.256rem;
+  }
+
+  .box-text .title-serie{
+    font-size: 2.46rem;
+  }
+
+  .box-info-serie .overview-serie{
+    font-size: 1.156rem;
+    width: 100%;
+  }
+
+  .my-list-netflix .title-section, .popular-netflix .title-section, .news-netflix .title-section, .trending-netflix .title-section{
+    font-size: 1.4rem;
+  }
+
+  .box-clasification-serie .match, .box-clasification-serie .year, .box-clasification-serie .seasons, .box-clasification-serie .hd{
+    font-size: initial;
+    margin-left: 6px;
+  }
+
+  .box-clasification-serie .year{
+    padding: 0;
+  }
+
+
+
+
+
+}
+
+
+
+
+

@@ -71,3 +71,9 @@
   padding: $padding;
   cursor: pointer;
 }
+
+@mixin mq ($breakpoint){
+  @media (max-width: $breakpoint){
+    @content;
+  }
+}

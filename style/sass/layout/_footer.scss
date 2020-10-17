@@ -25,7 +25,7 @@ footer{
 .column-footer1,.column-footer2, .column-footer3, .column-footer4{
   a{
     @include configLink{
-      @include font ($font-monstserrat, '', $color-icon);
+      @include font ($font-monstserrat, 0.98rem, $color-icon);
       margin-bottom: 0.6rem;
     }
   }

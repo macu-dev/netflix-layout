@@ -26,7 +26,7 @@
   }
 
   .box-text .title-serie{
-    font-size: 2.46rem;
+    font-size: 5vmax;
   }
 
   .box-info-serie .overview-serie{
@@ -47,12 +47,51 @@
     padding: 0;
   }
 
+  .gallery-my-list{
+    @include grid (repeat(2,1fr), repeat(3, 1fr));
+    width: calc( 100% - var(--sidebar-widht) );
+    height: auto;
+    gap: 0.5rem;
+  }
+
+  .arrow-gallery{
+    display: none !important;
+  }
 
 
-
-
+  .gallery-item{
+    width: $size-100;
+    height: $size-100;
+  
+    img{
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+  }
 }
 
+@include mq (434px){
+  .box-clasification-serie{
+    display: none;
+  }
+
+  .social-links{
+    display: inline-block;
+    .footer-img{
+      width: 22px;
+    }
+
+    svg{
+      margin-right: 0.5rem;
+    }
+  }
+
+  .column-footer2, .column-footer3, .column-footer4{
+    padding-top: 2rem;
+  }
+  
+}
 
 
 

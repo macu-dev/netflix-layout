@@ -1,9 +1,10 @@
 const menuItems = document.querySelectorAll(".item");
 const row = document.querySelector(".gallery");
-const movies = document.querySelectorAll(".gallery-item");
+let movies;
 const arrowGalleryLeft = document.querySelectorAll(".slider-btn-left");
 const arrowGalleryRigth = document.querySelectorAll(".slider-btn-right");
 const headerBg = document.querySelector('.container #header-netflix');
+const titleHeader = document.querySelector('.title-serie');
 const moviesInfo = [
   { titulo: 'Anne With E', 
     img: 'img/bg-movies/anne-with-an-e.jpg',
@@ -204,6 +205,26 @@ const moviesInfo = [
 
 ];
 
+// build row netflix movies
+
+function buildCardMovie(movies, baseindex=0){
+  let  htmlMovieInfo = movies.map((movie, index ) => `<div class="gallery-item">
+  <img src="img/${movie.cardImg}" alt="${movie.titulo}" data-set="${baseindex+ index}">
+  </div>`).join('');
+
+  return htmlMovieInfo;
+}
+
+
+function renderMovieSection(){
+  let sections = ['MyList', 'PopularOnNetflix', 'NewsOnNetflix', 'TrendingOnNetflix'];
+  for (let index = 0; index < sections.length; index++) {
+    const element = document.getElementById(sections[index]);
+    element.innerHTML = buildCardMovie(moviesInfo.slice(index*10, index*10+10), index*10)
+  }
+}
+
+//menu netflix
 
 function addControllersToMenuButtons(butons, controller) {
   butons.forEach(b => b.addEventListener('click', controller));
@@ -223,6 +244,8 @@ function controllerMenuButton(e) {
   });
 }
 
+//carrousel
+
 function btnSliderLeft(e){
   let element = e.target.nextElementSibling;
   element.scrollLeft += element.offsetWidth;
@@ -233,13 +256,7 @@ function btnSliderRight(e){
    element.scrollLeft -= element.offsetWidth;
 }
 
-//add class hover the movies
-movies.forEach(movie => {
-  movie.addEventListener('mouseenter', () => {
-    movie.classList.add('hover');
-    movie.addEventListener('mouseleave',() => movie.classList.remove('hover'));
-  });
-});
+
 
 //change bg header 
 
@@ -249,11 +266,24 @@ function changeBackgroundHeader(e){
   console.log(elemento)
 
   document.body.style.backgroundImage = `url(${moviesInfo[elemento].img})`;
-
-
-  
+  titleHeader.innerHTML = `${moviesInfo[elemento].titulo}`;
+  titleHeader.style.fontFamily = 'montserratregular';
+  if( titleHeader.innerHTML == 'Strangers Things') titleHeader.style.fontFamily = 'Benguiat';
 }
 
+
+
+renderMovieSection();
+
+movies = document.querySelectorAll(".gallery-item")
+
+//add class hover the movies
+movies.forEach(movie => {
+  movie.addEventListener('mouseenter', () => {
+    movie.classList.add('hover');
+    movie.addEventListener('mouseleave',() => movie.classList.remove('hover'));
+  });
+});
 
 addControllersToMenuButtons(menuItems, controllerMenuButton);
 addControllersToMenuButtons(arrowGalleryLeft, btnSliderLeft);

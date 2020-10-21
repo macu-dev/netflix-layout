@@ -167,6 +167,13 @@ const moviesInfo = [
 
 ];
 
+
+
+
+
+
+
+
 function addControllersToMenuButtons(butons, controller) {
   butons.forEach(b => b.addEventListener('click', controller));
 }

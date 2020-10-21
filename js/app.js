@@ -3,6 +3,7 @@ const row = document.querySelector(".gallery");
 const movies = document.querySelectorAll(".gallery-item");
 const arrowGalleryLeft = document.querySelectorAll(".slider-btn-left");
 const arrowGalleryRigth = document.querySelectorAll(".slider-btn-right");
+const headerBg = document.querySelector('.container #header-netflix');
 const moviesInfo = [
   { titulo: 'Anne With E', 
     img: 'img/bg-movies/anne-with-an-e.jpg' 
@@ -168,12 +169,6 @@ const moviesInfo = [
 ];
 
 
-
-
-
-
-
-
 function addControllersToMenuButtons(butons, controller) {
   butons.forEach(b => b.addEventListener('click', controller));
 }
@@ -210,7 +205,21 @@ movies.forEach(movie => {
   });
 });
 
+//change bg header 
+
+function changeBackgroundHeader(e){
+  let elemento;
+  elemento = e.target.dataset.set;
+  console.log(elemento)
+
+  document.body.style.backgroundImage = `url(${moviesInfo[elemento].img})`;
+
+
+  
+}
+
 
 addControllersToMenuButtons(menuItems, controllerMenuButton);
 addControllersToMenuButtons(arrowGalleryLeft, btnSliderLeft);
 addControllersToMenuButtons(arrowGalleryRigth, btnSliderRight);
+addControllersToMenuButtons(movies, changeBackgroundHeader);

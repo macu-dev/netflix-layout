@@ -1,4 +1,13 @@
 @include mq ($extra-large){
+
+  body {
+    background-size: cover;
+    background-position: top center;
+  }
+
+  #mask {
+    box-shadow: 0 -550px 80px #000000 inset;
+  }
   .container header{
     background-size: cover;
     background-position: center center;

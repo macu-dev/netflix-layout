@@ -1,4 +1,4 @@
 # netflix-layout
 
 
-(readmeimg/web.png)
+[Website](readmeimg/web.png)

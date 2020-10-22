@@ -1,3 +1,4 @@
+
 const menuItems = document.querySelectorAll(".item");
 const row = document.querySelector(".gallery");
 let movies;
@@ -246,16 +247,16 @@ function controllerMenuButton(e) {
 
 //carrousel
 
-function btnSliderLeft(e){
+function btnSliderRight(e){
   let element = e.target.nextElementSibling;
+  element.scrollLeft -= element.offsetWidth;
+  
+}
+
+function btnSliderLeft(e){
+  let element = e.target.previousElementSibling;
   element.scrollLeft += element.offsetWidth;
 }
-
-function btnSliderRight(e){
-  let element = e.target.previousElementSibling;
-   element.scrollLeft -= element.offsetWidth;
-}
-
 
 
 //change bg header 
@@ -286,6 +287,6 @@ movies.forEach(movie => {
 });
 
 addControllersToMenuButtons(menuItems, controllerMenuButton);
-addControllersToMenuButtons(arrowGalleryLeft, btnSliderLeft);
-addControllersToMenuButtons(arrowGalleryRigth, btnSliderRight);
+addControllersToMenuButtons(arrowGalleryLeft, btnSliderRight);
+addControllersToMenuButtons(arrowGalleryRigth, btnSliderLeft);
 addControllersToMenuButtons(movies, changeBackgroundHeader);

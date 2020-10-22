@@ -1,0 +1,449 @@
+@font-face {
+  font-family: "netflix-font";
+  src: url("/fonts/bebasneue-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "montserratlight";
+  src: url("/fonts/montserrat-thin-webfont") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Benguiat";
+  src: url("/fonts/Benguiat-Bold.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "montserratregular";
+  src: url("/fonts/montserrat-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  min-width: 100%;
+}
+
+body {
+  background-color: #141414;
+  background-image: url("/img/stranger-things.jpg");
+  background-size: 80%;
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-color: #01050e;
+  z-index: -11;
+}
+
+#mask {
+  z-index: -10;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 1300px;
+  pointer-events: none;
+  /* to make clicks pass through */
+  box-shadow: 24vw -400px 100px #000000 inset;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 60px repeat(6, 1fr);
+  grid-template-rows: repeat(20, auto);
+  grid-template-areas: "navigation header header header header header header" "navigation header header header header header header" "navigation header header header header header header" "navigation header header header header header header" "navigation myList myList myList myList myList myList" "navigation myList myList myList myList myList myList" "navigation myList myList myList myList myList myList" "navigation popular popular popular popular popular popular" "navigation popular popular popular popular popular popular" "navigation popular popular popular popular popular popular" "navigation news    news    news    news    news    news" "navigation news    news    news    news    news    news" "navigation news    news    news    news    news    news" "navigation trending  trending  trending    trending    trending    trending" "navigation trending  trending  trending    trending    trending    trending" "navigation trending  trending  trending    trending    trending    trending" "navigation footer footer  footer  footer    footer    footer" "navigation footer footer  footer  footer    footer    footer" "navigation footer footer  footer  footer    footer    footer" "navigation footer footer  footer  footer    footer    footer";
+}
+.container header {
+  grid-column: header/header;
+  grid-row: header/header;
+}
+.container .navigation-netflix {
+  grid-column: navigation/navigation;
+  grid-row: navigation/navigation;
+}
+.container .my-list-netflix {
+  grid-column: myList/myList;
+  grid-row: myList/myList;
+}
+.container .popular-netflix {
+  grid-column: popular/popular;
+  grid-row: popular/popular;
+}
+.container .news-netflix {
+  grid-column: news/news;
+  grid-row: news/news;
+}
+.container .trending-netflix {
+  grid-column: trending/trending;
+  grid-row: trending/trending;
+}
+.container footer {
+  grid-column: footer/footer;
+  grid-row: footer/footer;
+}
+
+.container header {
+  height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+  align-content: center;
+}
+
+.box-text {
+  width: 100%;
+  padding: 0 2rem;
+}
+.box-text .title-netflix {
+  font-family: "montserratregular";
+  font-size: 1.4rem;
+  color: white;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  line-height: 50px;
+  text-shadow: 1px -1px 1px black;
+}
+.box-text .title-netflix span {
+  font-family: "montserratlight";
+  font-size: 1 0.4rem;
+  color: white;
+  margin-left: 3px;
+  text-transform: uppercase;
+}
+.box-text .title-serie {
+  font-family: "Benguiat";
+  font-size: 4rem;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 1px 2px 1px black;
+  transform: scale(1, 1.15);
+}
+
+.box-info-serie {
+  padding: 0 2rem;
+}
+
+.box-clasification-serie .match {
+  text-transform: capitalize;
+  color: #09a009;
+  letter-spacing: 1px;
+  font-size: 1.15rem;
+}
+.box-clasification-serie .year {
+  margin-left: 10px;
+  font-size: 1.15rem;
+}
+.box-clasification-serie .clasification {
+  background-color: #1f1e1e;
+  padding: 4px;
+  color: grey;
+  font-weight: bolder;
+  text-transform: uppercase;
+  margin-left: 10px;
+}
+.box-clasification-serie .seasons {
+  text-transform: capitalize;
+  margin-left: 10px;
+}
+.box-clasification-serie .hd {
+  text-transform: uppercase;
+  margin-left: 10px;
+  color: grey;
+  border: 1px solid grey;
+  padding: 3px;
+  border-radius: 4px;
+}
+
+.box-info-serie .overview-serie {
+  margin-top: 10px;
+  font-family: "montserratregular";
+  font-size: 1.3rem;
+  color: #9e9b9b;
+  line-height: 26px;
+  width: 50%;
+  text-shadow: 1px 1px 2px black;
+}
+
+.navigation-netflix {
+  background-color: #141414;
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: fixed;
+  justify-content: space-evenly;
+}
+.navigation-netflix .navigation-items {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: inherit;
+  justify-content: center;
+  align-items: center;
+}
+.navigation-netflix .navigation-items .item {
+  width: 100%;
+  height: 50%;
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+}
+.navigation-netflix .navigation-items .item:hover {
+  cursor: pointer;
+}
+
+.item-active {
+  margin-left: -3px;
+  width: 100%;
+  border-left: 3px solid #e50914;
+  cursor: pointer;
+}
+
+.my-list-netflix, .popular-netflix, .news-netflix, .trending-netflix {
+  width: 100%;
+  height: auto;
+  color: white;
+  margin-top: 2.5rem;
+}
+.my-list-netflix .title-section, .popular-netflix .title-section, .news-netflix .title-section, .trending-netflix .title-section {
+  font-family: "montserratregular";
+  font-size: 1.8rem;
+  color: white;
+  font-weight: bolder;
+}
+
+.gallery-my-list {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  width: calc( 100% / 7 * 10 );
+  height: 240px;
+  gap: 0.8rem;
+  transition: all 0.5s ease-in;
+}
+
+.arrow-gallery.arrow-right {
+  right: 0;
+  margin-top: -220px;
+}
+
+.gallery-item {
+  width: 100%;
+  height: 100%;
+}
+.gallery-item img {
+  margin-top: 20px;
+  width: 345px;
+  height: 200px;
+  object-fit: cover;
+}
+.gallery-item:hover {
+  cursor: pointer;
+}
+
+.hover {
+  transform: scale(1.2);
+  transform-origin: center;
+  transition: all 0.15s ease-out;
+}
+
+.gallery {
+  width: 100%;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  height: inherit;
+  position: relative;
+}
+
+.arrow-gallery {
+  position: absolute;
+  width: 50px;
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 200px;
+  z-index: 100;
+  margin-top: 20px;
+  line-height: 175px !important;
+  text-align: center;
+  transition: 0.2s ease all;
+  color: white;
+}
+.arrow-gallery:hover {
+  cursor: pointer;
+}
+
+footer {
+  margin-top: 4rem;
+  height: 45vh;
+}
+footer .container {
+  padding: 0 4%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+}
+footer .column-footer1, footer .column-footer2, footer .column-footer3, footer .column-footer4 {
+  display: flex;
+  justify-content: center;
+  height: 60%;
+  flex-direction: column;
+  width: 25%;
+}
+
+.column-footer1 a, .column-footer2 a, .column-footer3 a, .column-footer4 a {
+  text-decoration: none;
+  font-family: "montserratregular";
+  font-size: 0.98rem;
+  color: #b4b3b3;
+  margin-bottom: 0.6rem;
+}
+
+.column-footer2, .column-footer3, .column-footer4 {
+  padding-top: 1rem;
+}
+
+.social-links svg {
+  fill: #b4b3b3;
+  margin-right: 1rem;
+}
+
+.btn-box {
+  width: 100%;
+}
+.btn-box button {
+  background-color: transparent;
+  border: 1px solid #b4b3b3;
+  border-radius: 3px;
+  padding: 10px 19px;
+  cursor: pointer;
+  font-family: "montserratregular";
+  font-size: initial;
+  color: #b4b3b3;
+  margin-top: 1rem;
+}
+
+.btn-box + p {
+  width: 100%;
+  font-family: "montserratregular";
+  font-size: initial;
+  color: #b4b3b3;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 1200px) {
+  body {
+    background-size: cover;
+    background-position: top center;
+  }
+
+  #mask {
+    box-shadow: 0 -550px 80px #000000 inset;
+  }
+
+  .container header {
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+  }
+
+  .box-info-serie .overview-serie, .box-clasification-serie .clasification, .box-clasification-serie .hd {
+    color: #b4b3b3;
+  }
+
+  .column-footer1 a, .column-footer2 a, .column-footer3 a, .column-footer4 a, .btn-box button, .btn-box + p {
+    font-size: 0.79rem;
+  }
+}
+@media (max-width: 992px) {
+  footer .column-footer1, footer .column-footer2, footer .column-footer3, footer .column-footer4 {
+    width: 50%;
+    height: auto;
+  }
+
+  .box-text .title-netflix, .box-text .title-netflix span {
+    font-size: 1.256rem;
+  }
+
+  .box-text .title-serie {
+    font-size: 5vmax;
+  }
+
+  .box-info-serie .overview-serie {
+    font-size: 1.156rem;
+    width: 100%;
+  }
+
+  .my-list-netflix .title-section, .popular-netflix .title-section, .news-netflix .title-section, .trending-netflix .title-section {
+    font-size: 1.4rem;
+  }
+
+  .box-clasification-serie .match, .box-clasification-serie .year, .box-clasification-serie .seasons, .box-clasification-serie .hd {
+    font-size: initial;
+    margin-left: 6px;
+  }
+
+  .box-clasification-serie .year {
+    padding: 0;
+  }
+
+  .gallery-my-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: calc( 100% - var(--sidebar-widht) );
+    height: auto;
+    gap: 0.5rem;
+  }
+
+  .arrow-gallery {
+    display: none !important;
+  }
+
+  .gallery-item {
+    width: 100%;
+    height: 100%;
+  }
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+}
+@media (max-width: 434px) {
+  .box-clasification-serie {
+    display: none;
+  }
+
+  .social-links {
+    display: inline-block;
+  }
+  .social-links .footer-img {
+    width: 22px;
+  }
+  .social-links svg {
+    margin-right: 0.5rem;
+  }
+
+  .column-footer2, .column-footer3, .column-footer4 {
+    padding-top: 2rem;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
